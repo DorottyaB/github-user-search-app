@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/DorottyaB/github-user-search-app)
-- Live Site URL: []()
+- Live Site URL: [on Netlify](https://superb-quokka-c395fc.netlify.app/)
 
 ## Author
 
