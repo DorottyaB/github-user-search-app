@@ -441,12 +441,10 @@ li.disabled svg {
   }
 
   ul {
-    -moz-column-count: 2;
-    -moz-column-gap: 40px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 40px;
-    column-count: 2;
-    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, max-content);
+    column-gap: 10px;
   }
 }
 
@@ -486,7 +484,7 @@ li.disabled svg {
   }
 
   .card-inner {
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: repeat(2, auto) 1fr;
     column-gap: 35px;
     align-items: center;
   }

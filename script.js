@@ -36,6 +36,10 @@ const getUser = async username => {
   const userBlog = document.getElementById('userBlog');
   const userTwitter = document.getElementById('userTwitter');
   const userCompany = document.getElementById('userCompany');
+
+  const array = [userBio, userLocation, userBlog, userTwitter, userCompany];
+  array.map(item => item.classList.remove('disabled'));
+
   try {
     const res = await axios.get(`https://api.github.com/users/${username}`);
     const {
@@ -68,7 +72,10 @@ const getUser = async username => {
     userRepos.textContent = public_repos;
     userFollowers.textContent = followers;
     userFollowing.textContent = following;
-    userLocation.textContent = location;
+    userLocation.querySelector('p').textContent = location || 'Not Available';
+    if (!location) {
+      userLocation.classList.add('disabled');
+    }
     userBlog.querySelector('a').textContent = blog || 'Not Available';
     userBlog.querySelector('a').href = blog || '';
     if (!blog) {
